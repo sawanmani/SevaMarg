@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seva-marg.local/schema/override.schema.json",
+  "title": "Seva-Marg district override",
+  "description": "Where a district publishes different fees / SLA / office rules, the delta lives here so 'scalable across UP' stays a data claim. An override replaces the whole field it defines; it never merges array elements. Every fact object inside it still needs source_url + verified_on.",
+  "type": "object",
+  "required": ["service_id", "district", "overrides"],
+  "additionalProperties": false,
+  "properties": {
+    "service_id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "district": { "type": "string", "pattern": "^[a-z0-9-]+$", "description": "slug, e.g. luckno" },
+    "note": { "type": "string", "description": "one line: which page said the district differs, and when" },
+    "overrides": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": false,
+      "properties": {
+        "eligibility": { "type": "array", "minItems": 1, "items": { "type": "object", "required": ["text", "source_url", "verified_on"], "properties": { "text": { "$ref": "service.schema.json#/definitions/bilingual" }, "source_url": { "$ref": "service.schema.json#/definitions/sourceUrl" }, "verified_on": { "$ref": "service.schema.json#/definitions/date" } } } },
+        "documents": { "type": "array", "minItems": 1, "items": { "type": "object", "required": ["item", "who", "source_url", "verified_on"], "properties": { "item": { "$ref": "service.schema.json#/definitions/bilingual" }, "who": { "enum": ["applicant", "guardian", "either"] }, "copies": { "type": "integer", "minimum": 0 }, "attestation": { "type": "boolean" }, "format": { "type": "string" }, "source_url": { "$ref": "service.schema.json#/definitions/sourceUrl" }, "verified_on": { "$ref": "service.schema.json#/definitions/date" } } } },
+        "fees": { "type": "array", "minItems": 1, "items": { "type": "object", "required": ["item", "amount_inr", "mode", "source_url", "verified_on"], "properties": { "item": { "$ref": "service.schema.json#/definitions/bilingual" }, "amount_inr": { "type": "number", "minimum": 0 }, "mode": { "enum": ["online", "cash", "either"] }, "free_below_income_inr": { "type": ["number", "null"] }, "source_url": { "$ref": "service.schema.json#/definitions/sourceUrl" }, "verified_on": { "$ref": "service.schema.json#/definitions/date" } } } },
+        "sla": { "type": "object", "required": ["days", "scope", "source_url", "verified_on"], "properties": { "days": { "type": "integer", "minimum": 0 }, "scope": { "$ref": "service.schema.json#/definitions/bilingual" }, "source_url": { "$ref": "service.schema.json#/definitions/sourceUrl" }, "verified_on": { "$ref": "service.schema.json#/definitions/date" } } },
+        "office": { "type": "object", "required": ["type", "how_to_find", "source_url", "verified_on"], "properties": { "type": { "type": "array", "items": { "enum": ["tehsil", "csc", "dm_office", "village_pradh"] } }, "how_to_find": { "$ref": "service.schema.json#/definitions/bilingual" }, "source_url": { "$ref": "service.schema.json#/definitions/sourceUrl" }, "verified_on": { "$ref": "service.schema.json#/definitions/date" } } },
+        "escalation": { "type": "array", "minItems": 1, "items": { "type": "object", "required": ["when", "do", "source_url", "verified_on"], "properties": { "when": { "$ref": "service.schema.json#/definitions/bilingual" }, "do": { "$ref": "service.schema.json#/definitions/bilingual" }, "contact": { "type": "string" }, "source_url": { "$ref": "service.schema.json#/definitions/sourceUrl" }, "verified_on": { "$ref": "service.schema.json#/definitions/date" } } } }
+      }
+    }
+  }
+}

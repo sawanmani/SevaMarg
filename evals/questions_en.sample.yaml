@@ -1,0 +1,56 @@
+# English in-scope evaluation set — 10 of the required 50 seeded here.
+# Parity rule (docs/EVIDENCE_AND_DEMO.md §1.2): every EN question here has a HI twin
+# and must produce the SAME field values. Parity delta target <= 2 percentage points.
+- id: en-001
+  ask: "what documents are required for an income certificate in Uttar Pradesh"
+  service: income-certificate
+  expect_fields: [documents]
+  twin_of: hi-001
+- id: en-002
+  ask: "how many days does it take to get an income certificate"
+  service: income-certificate
+  expect_fields: [sla]
+  twin_of: hi-002
+- id: en-003
+  ask: "what is the fee for an income certificate"
+  service: income-certificate
+  expect_fields: [fees]
+  twin_of: hi-003
+- id: en-004
+  ask: "where do I go in my area to apply for an income certificate"
+  service: income-certificate
+  expect_fields: [office]
+  twin_of: hi-004
+- id: en-005
+  ask: "I submitted the form, what happens next"
+  service: income-certificate
+  intent: next_steps
+  expect_fields: [next_steps]
+  twin_of: hi-006
+- id: en-006
+  ask: "the application has been pending for 60 days, how do I complain"
+  service: income-certificate
+  intent: escalation
+  expect_fields: [escalation]
+  twin_of: hi-007
+- id: en-007
+  ask: "how do I check the status of my online application"
+  service: income-certificate
+  intent: status_lookup
+  expect_fields: [next_steps]
+  twin_of: hi-009
+- id: en-008
+  ask: "am I eligible for an income certificate if I am a daily wage worker"
+  service: income-certificate
+  expect_fields: [eligibility]
+  twin_of: hi-010
+- id: en-009
+  ask: "how long do I need to have lived here for a residence certificate"
+  service: residence-certificate
+  expect_fields: [eligibility]
+  twin_of: hi-011
+- id: en-010
+  ask: "do I still have to visit an office after applying online for a birth certificate"
+  service: birth-certificate
+  expect_fields: [channel]
+  twin_of: hi-012

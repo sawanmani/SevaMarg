@@ -1,0 +1,116 @@
+# FIXED test data — must pass the citation gate. __fixtures__ is excluded from real builds
+# (packages/catalogue/lib.mjs listYaml), so nothing here can reach a device.
+# Used by packages/catalogue/catalogue.test.mjs to prove validate.mjs exits 0 on a good file.
+service_id: fixture-good-service
+state: UP
+district_scope: state
+
+lang:
+  hi:
+    name: "आय प्रमाण पत्र (नमूना)"
+    aliases:
+      - "income certificate"
+      - "ay praman patra"
+      - "aay praman patra kaise banaye"
+      - "income certificate kaise banega"
+  en:
+    name: "Income Certificate (fixture)"
+    aliases:
+      - "income certificate up"
+      - "earnings certificate"
+      - "how to get income certificate"
+
+eligibility:
+  - text:
+      hi: "उत्तर प्रदेश का निवासी, आय सीमा के भीतर"
+      en: "Resident of Uttar Pradesh within the income ceiling"
+    source_url: "https://upcsc.in/income-certificate"
+    verified_on: "2026-10-16"
+
+documents:
+  - item:
+      hi: "पहचान प्रमाण"
+      en: "Identity proof"
+    who: applicant
+    copies: 1
+    attestation: false
+    format: "self-attested copy"
+    source_url: "https://sdsup.gov.in/documents"
+    verified_on: "2026-10-16"
+
+fees:
+  - item:
+      hi: "प्रमाण पत्र शुल्क"
+      en: "Certificate fee"
+    amount_inr: 10
+    mode: either
+    free_below_income_inr: null
+    source_url: "https://upcsc.in/fees"
+    verified_on: "2026-10-16"
+
+sla:
+  days: 30
+  scope:
+    hi: "आवेदन से वितरण तक"
+    en: "from application to delivery"
+  source_url: "https://sdsup.gov.in/sla"
+  verified_on: "2026-10-16"
+
+channel:
+  - kind: online
+    steps:
+      - n: 1
+        action: { hi: "ऑनलाइन आवेदन भरें", en: "Fill the online application" }
+        needs_visit: false
+      - n: 2
+        action: { hi: "शुल्क का भुगतान करें", en: "Pay the fee" }
+        needs_visit: false
+    source_url: "https://upcsc.in/online"
+    verified_on: "2026-10-16"
+  - kind: csc
+    steps:
+      - n: 1
+        action: { hi: "CSC केंद्र जाएँ", en: "Visit the CSC centre" }
+        needs_visit: true
+    source_url: "https://upcsc.in/csc"
+    verified_on: "2026-10-16"
+
+office:
+  type: [tehsil, csc]
+  how_to_find:
+    hi: "तहसील स्थल या निकटतम CSC केंद्र की सूची में देखें"
+    en: "Check the tehsil list or the nearest CSC centre"
+  source_url: "https://upcsc.in/centres"
+  verified_on: "2026-10-16"
+
+escalation:
+  - when:
+      hi: "SLA के बाद भी प्रमाण पत्र न मिले"
+      en: "Certificate not received after the SLA"
+    do:
+      hi: "शिकायत पोर्टल पर दर्ज करें"
+      en: "File a grievance on the portal"
+    contact: "1930"
+    source_url: "https://sdsup.gov.in/grievance"
+    verified_on: "2026-10-16"
+
+next_steps:
+  - status: applied
+    means: { hi: "आवेदन स्वीकृति के लिए प्रतीक्षित", en: "Application awaits approval" }
+    eta_days: null
+    source_url: "https://sdsup.gov.in/status"
+    verified_on: "2026-10-16"
+  - status: delivered
+    means: { hi: "प्रमाण पत्र डाउनलोड करें", en: "Download the certificate" }
+    eta_days: null
+    source_url: "https://sdsup.gov.in/status"
+    verified_on: "2026-10-16"
+
+faqs:
+  - q: { hi: "क्या ऑनलाइन आवेदन के बाद कार्यालय जाना ज़रूरी है?", en: "Is an office visit needed after applying online?" }
+    a: { hi: "सूची में दर्ज दस्तावेज़ों के सत्यापन तक नहीं", en: "No, until the listed documents are verified" }
+    source_url: "https://upcsc.in/faq"
+    verified_on: "2026-10-16"
+
+stale_after_days: 180
+confidence_floor: 0.85

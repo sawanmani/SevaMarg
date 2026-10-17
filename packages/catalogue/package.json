@@ -1,0 +1,8 @@
+{
+  "name": "@seva-marg/catalogue",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Citation-enforcing citizen-service catalogue. Source of truth for every user-visible fact.",
+  "main": "lib.mjs"
+}

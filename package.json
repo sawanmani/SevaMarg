@@ -1,0 +1,27 @@
+{
+  "name": "seva-marg",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Seva-Marg (UPNIC-004) — data + tooling workspace. The Android app lives in android/.",
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "validate:catalogue": "node packages/catalogue/validate.mjs",
+    "catalogue:build": "node packages/catalogue/build.mjs",
+    "catalogue:build:dev": "node packages/catalogue/build.mjs --allow-unverified",
+    "i18n:parity": "node packages/i18n/parity.mjs",
+    "evals:build": "node evals/build.mjs",
+    "test": "node --test \"packages/**/*.test.mjs\" \"evals/**/*.test.mjs\"",
+    "check": "npm run test && npm run validate:catalogue && npm run i18n:parity && npm run evals:build"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "js-yaml": "^4.1.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

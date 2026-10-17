@@ -1,0 +1,125 @@
+# .github/workflows/android.yml
+#
+# Gate 1's build line: "`./gradlew :core:test` green; CI runs validate + parity + `:core:test` +
+# `assembleDebug`" (docs/PHASES.md). Two additions that came out of building this for real:
+#
+#   - `:bench:test` joins the test step. It is the only thing standing between "the runner printed a
+#     number" and "the number means what the deck says it means".
+#   - the benchmark job reads results/bench/latest.json instead of trusting an exit code, because two
+#     different failures are possible and only one of them is a code bug: a broken honesty promise (fatal)
+#     versus a catalogue that is not verified yet (a data duty, Phase 1.4).
+#
+# Toolchain note: the machine this project was written on has JDK 26 and nothing else, which is why
+# android/gradle/libs.versions.toml pins a bytecode target instead of requesting a toolchain. A runner
+# gets the normal JDK 17, and the same build file works on both.
+name: android
+
+on:
+  push:
+    paths:
+      - 'android/**'
+      - 'packages/**'
+      - 'evals/**'
+      - 'scripts/**'
+      - '.github/workflows/android.yml'
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      # The assets are committed, and a build must not depend on that being true. Regenerating them here
+      # means the APK under test carries what the generators would write from today's YAML.
+      - name: Regenerate the shipped data assets
+        run: |
+          npm ci
+          npm run catalogue:build:dev
+          npm run i18n:parity
+          npm run evals:build
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Ensure the Android platform this build compiles against
+        run: |
+          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses >/dev/null
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --install \
+            "platform-tools" "platforms;android-35" "build-tools;35.0.0"
+        # TO VERIFY on the first CI run: the runner image's cmdline-tools path, and whether AGP would
+        # have fetched these itself. Written out because a silently auto-downloaded SDK is the kind of
+        # build that only works on the machine that made it.
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          cache-read-only: false
+
+      - name: Unit tests - :core (routing, composing, refusal) and :bench (the report itself)
+        working-directory: android
+        run: |
+          chmod +x gradlew
+          ./gradlew --no-daemon --console=plain :core:test :bench:test
+
+      - name: Debug APK
+        working-directory: android
+        run: ./gradlew --no-daemon --console=plain :app:assembleDebug
+
+      - name: Eval set over the shipped catalogue
+        working-directory: android
+        run: ./gradlew --no-daemon --console=plain :bench:evalReport
+
+      - name: Judge the report - honesty is fatal, incomplete data is not
+        run: |
+          node -e '
+          const r = require("./results/bench/latest.json");
+          const line = (k, v) => console.log(`${k}: ${v}`);
+          line("items", r.total);
+          line("intent accuracy", (r.intentAccuracy * 100).toFixed(1) + "%");
+          line("refusal coverage", (r.refusalCoverage * 100).toFixed(1) + "%");
+          line("fabrications", r.fabrications);
+          line("answers shown without a full citation", r.answersWithoutCitations);
+          line("answers blocked pending verification", r.answersBlockedPendingVerification);
+          line("refusals with no verified helpline", r.refusalsMissingHelpline);
+          if (r.fabrications > 0 || r.answersWithoutCitations > 0) {
+            console.error("HONESTY FAILURE: an untruthful answer reached a citizen.");
+            console.error(r.failures.join("\n"));
+            process.exit(1);
+          }
+          if (r.provisionalData) {
+            console.warn("DATA INCOMPLETE: catalogue fields are still VERIFY_OFFICIAL (Phase 1.4).");
+          }
+          '
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: app-debug-apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bench-report
+          path: results/bench/latest.json
+          if-no-files-found: error
+
+      - name: Test reports on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports
+          path: |
+            android/core/build/reports/tests
+            android/bench/build/reports/tests
+            android/bench/build/test-results

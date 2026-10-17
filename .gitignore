@@ -1,0 +1,60 @@
+# ── Android / Gradle ────────────────────────────────────────────────
+.gradle/
+android/*/build/
+build/
+.local/
+captures/
+.externalNativeBuild/
+.cxx/
+# machine-specific SDK path — never commit
+local.properties
+*.jks
+*.keystore
+*.hprof
+
+# APKs are release artefacts, not source. Keep their hashes instead (see artifacts/)
+*.apk
+*.aab
+!artifacts/releases/SHA256SUMS.txt
+
+# Speech model weights are fetched by scripts/fetch-models.sh (size, never in git).
+# The *licence + version + hash* of whatever ships inside the APK is recorded in NOTICES.md.
+android/voice/src/main/assets/model/
+*.onnx
+vosk-model-*/
+piper-voices/
+
+# ── node (catalogue / i18n / eval-set tooling) ──────────────────────
+node_modules/
+*.tsbuildinfo
+tools/**/__pycache__/
+
+# NOTE: packages/catalogue/dist/ AND android/core/src/main/assets/catalogue.json are
+# deliberately COMMITTED — a reviewer must be able to read exactly the data the shipped APK
+# contains, and see that every value carries a citation. Do not gitignore them.
+
+# ── python (bench + field tooling) ─────────────────────────────────
+.venv/
+__pycache__/
+*.pyc
+
+# ── secrets & local ────────────────────────────────────────────────
+.env
+.env.*
+*.local
+
+# ── privacy ────────────────────────────────────────────────────────
+# Raw field responses and utterance recordings contain voices / house details.
+# Keep only de-identified, aggregated output in git. Portal/proof screenshots ARE
+# tracked on purpose (they are judge-facing receipts) — do not ignore them.
+results/field/raw/
+evals/utterances/raw/
+tools/field/corpus/raw/
+
+# ── os / editor ────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+*.iml
+.vscode/*
+!.vscode/settings.json

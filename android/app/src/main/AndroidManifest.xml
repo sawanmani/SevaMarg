@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- android/app/src/main/AndroidManifest.xml
+
+     Read this list as the privacy statement of the product. There is no INTERNET permission: the
+     catalogue ships inside the APK, so a citizen's question never leaves the phone, and a judge can
+     prove it in airplane mode or with a socket counter. RECORD_AUDIO is added in the same commit as the
+     code that opens a microphone (Phase 3.1), not before. allowBackup="false" keeps answered
+     questions out of anyone else's cloud copy. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="false"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar">
+        <!-- No launcher icon yet, so the system default appears on the home screen. It is replaced with
+             the real mark in the brand pass, not invented here. -->
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|uiMode|locale|layoutDirection"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

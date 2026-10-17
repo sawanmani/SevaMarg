@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- android/voice/src/main/AndroidManifest.xml
+     A library manifest carries nothing but the package. RECORD_AUDIO is declared in :app, and not
+     until :voice has code that actually opens a mic (Phase 3.1) - a permission in the manifest with no
+     code behind it is a privacy promise the app has no reason to make yet. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" />

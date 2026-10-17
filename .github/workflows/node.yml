@@ -1,0 +1,79 @@
+# .github/workflows/node.yml
+#
+# The data half of Gate 1 (docs/PHASES.md): the no-fabrication validator, the HI/EN parity check and the
+# eval-set build. It runs the generators and compares their output with what is committed, because the
+# rule in docs/PROJECT_STRUCTURE.md is that a reviewer must be able to read exactly what the shipped APK
+# contains - so a generated asset that no one regenerated is a finding, not a detail.
+#
+# One honest wrinkle: `npm run validate:catalogue` fails today, by design. The income-certificate fields
+# still hold VERIFY_OFFICIAL placeholders (Phase 1.4 is the verification work), and the validator's whole
+# purpose is to stop a placeholder from becoming a citizen-facing sentence. So the strict run is reported
+# and does not decide the job; the number of remaining placeholders is printed into the job summary, which
+# is the figure the synopsis quotes as "fields still to verify". When that reaches zero this step becomes
+# a hard gate by deleting one line.
+name: node
+
+on:
+  push:
+    paths:
+      - 'packages/**'
+      - 'evals/**'
+      - 'android/core/src/main/assets/**'
+      - 'scripts/catalogue-check.sh'
+      - 'package.json'
+      - '.github/workflows/node.yml'
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Node tests, validator, builders, parity, asset freshness
+        run: bash scripts/catalogue-check.sh --allow-unverified
+
+      - name: Strict citation gate (advisory until Phase 1.4 verification lands)
+        run: |
+          set -o pipefail
+          out=$(npm run validate:catalogue 2>&1) || true
+          printf '%s\n' "$out" | tail -n 20
+          # Advisory covers the sentinel, nothing else. A validator that fails on placeholders and one
+          # that crashes both exit 1, so the report banner is the only honest way to tell them apart -
+          # and a broken schema must stop the job instead of being logged as "data not verified yet".
+          printf '%s' "$out" | grep -q 'Seva-Marg catalogue validator' || {
+            echo "validate:catalogue produced no report - that is a code failure, not a data gap." >&2
+            exit 1
+          }
+
+      - name: How much of the shipped asset is still a placeholder?
+        run: |
+          total=$(grep -o 'VERIFY_OFFICIAL' android/core/src/main/assets/catalogue.json | wc -l || echo 0)
+          {
+            echo "## Catalogue verification state"
+            echo "- VERIFY_OFFICIAL occurrences in catalogue.json: **$total**"
+            echo "- validator tail:"
+            npm run validate:catalogue 2>&1 | tail -n 12 || true
+          } | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: generated-data
+          path: |
+            android/core/src/main/assets/catalogue.json
+            android/core/src/main/assets/i18n/hi.json
+            android/core/src/main/assets/i18n/en.json
+            evals/dist/eval-set.json
+          if-no-files-found: error

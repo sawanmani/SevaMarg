@@ -1,0 +1,16 @@
+{
+  "income-certificate": [
+    {
+      "kind": "online",
+      "steps": 7,
+      "visits": 0,
+      "verified": true
+    },
+    {
+      "kind": "csc",
+      "steps": 5,
+      "visits": 1,
+      "verified": true
+    }
+  ]
+}

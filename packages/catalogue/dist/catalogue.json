@@ -1,0 +1,469 @@
+{
+ "schema_version": 1,
+ "generator": "packages/catalogue/build.mjs",
+ "generated_on": "2026-10-17",
+ "provisional": true,
+ "langs": [
+  "hi",
+  "en"
+ ],
+ "statement": "UPNIC-004",
+ "citation_rule": "every fact object carries source_url + verified_on; VERIFY_OFFICIAL cannot ship",
+ "source_hosts": [
+  "edistrict.up.gov.in",
+  "ghaziabad.nic.in",
+  "jansunwai.up.nic.in",
+  "meerutdivision.nic.in",
+  "verify_official"
+ ],
+ "services": [
+  {
+   "service_id": "income-certificate",
+   "state": "UP",
+   "district_scope": "state",
+   "lang": {
+    "hi": {
+     "name": "आय प्रमाण पत्र",
+     "aliases": [
+      "income certificate",
+      "ay praman patra",
+      "income certificate kaise banaye",
+      "aay ki praman patra",
+      "आय प्रमाण पत्र",
+      "आय प्रमाण पत्र का फार्म",
+      "income certificate ka form",
+      "aay praman patra kaise bane"
+     ]
+    },
+    "en": {
+     "name": "Income Certificate",
+     "aliases": [
+      "income certificate",
+      "earnings certificate",
+      "how to apply for income certificate in UP",
+      "income certificate fee",
+      "income certificate documents"
+     ]
+    }
+   },
+   "eligibility": [
+    {
+     "text": {
+      "hi": "आवेदक का आधार नंबर अनिवार्य है। आय प्रमाण पत्र की सेवा आधार ई-केवाईसी सत्यापित होने के बाद ही उपलब्ध होती है; आपकी पहचान की जानकारी केवल प्रमाण पत्र प्राप्त करने के लिए उपयोग की जाती है और आपका बायोमेट्रिक्स संग्रहीत या साझा नहीं किया जाता।",
+      "en": "The applicant's Aadhaar number is required. The income certificate is available only after Aadhaar e-KYC verification; your identity information is used only to deliver the certificate and your biometrics are neither stored nor shared."
+     },
+     "source_url": "https://edistrict.up.gov.in/eDistrictup/Services/services_hi.aspx",
+     "verified_on": "2026-10-17"
+    },
+    {
+     "text": {
+      "hi": "जाति, आय और निवास प्रमाण पत्र के लिए आधार संख्या अनिवार्य है; पंजीकरण या अन्य ई-डिस्ट्रिक्ट सेवाओं के लिए आप पहचान के प्रमाण के रूप में राशन कार्ड या चुनाव आईडी कार्ड की प्रति उपयोग कर सकते हैं।",
+      "en": "An Aadhaar number is mandatory for caste, income and domicile certificates; for registration or other e-District services a copy of your ration card or voter ID card can be used as proof of identity."
+     },
+     "source_url": "https://edistrict.up.gov.in/edistrictup/",
+     "verified_on": "2026-10-17"
+    },
+    {
+     "text": {
+      "hi": "VERIFY_OFFICIAL",
+      "en": "VERIFY_OFFICIAL"
+     },
+     "source_url": "https://VERIFY_OFFICIAL",
+     "verified_on": "0000-00-00"
+    }
+   ],
+   "documents": [
+    {
+     "item": {
+      "hi": "निर्धारित प्रारूप पर प्रार्थना पत्र",
+      "en": "Application in the prescribed format"
+     },
+     "who": "applicant",
+     "source_url": "https://ghaziabad.nic.in/%E0%A4%86%E0%A4%AF-%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%AE%E0%A4%BE%E0%A4%A3-%E0%A4%AA%E0%A4%A4%E0%A5%8D%E0%A4%B0/",
+     "verified_on": "2026-10-17"
+    },
+    {
+     "item": {
+      "hi": "स्वप्रमाणित घोषणा पत्र",
+      "en": "Self-attested declaration"
+     },
+     "who": "applicant",
+     "attestation": true,
+     "source_url": "https://edistrict.up.gov.in/eDistrictup/Services/services_hi.aspx",
+     "verified_on": "2026-10-17"
+    },
+    {
+     "item": {
+      "hi": "राशन कार्ड की छाया प्रति",
+      "en": "Photocopy of the ration card"
+     },
+     "who": "applicant",
+     "source_url": "https://edistrict.up.gov.in/eDistrictup/Services/services_hi.aspx",
+     "verified_on": "2026-10-17"
+    },
+    {
+     "item": {
+      "hi": "वेतनभोगी होने की दशा में अद्यतन वेतन पर्ची",
+      "en": "Updated salary slip, if the applicant is salaried"
+     },
+     "who": "applicant",
+     "source_url": "https://edistrict.up.gov.in/eDistrictup/Services/services_hi.aspx",
+     "verified_on": "2026-10-17"
+    },
+    {
+     "item": {
+      "hi": "पासपोर्ट साइज़ फोटो",
+      "en": "Passport-size photograph"
+     },
+     "who": "applicant",
+     "source_url": "https://ghaziabad.nic.in/%E0%A4%86%E0%A4%AF-%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%AE%E0%A4%BE%E0%A4%A3-%E0%A4%AA%E0%A4%A4%E0%A5%8D%E0%A4%B0/",
+     "verified_on": "2026-10-17"
+    }
+   ],
+   "fees": [
+    {
+     "item": {
+      "hi": "आय प्रमाण पत्र का सेवा शुल्क (13 जनवरी 2021 से प्रवर्तमान)",
+      "en": "Income certificate service fee (effective 13 January 2021)"
+     },
+     "amount_inr": 15,
+     "mode": "either",
+     "free_below_income_inr": null,
+     "source_url": "https://edistrict.up.gov.in/eDistrictup/Services/services_hi.aspx",
+     "verified_on": "2026-10-17"
+    }
+   ],
+   "sla": {
+    "days": 0,
+    "scope": {
+     "hi": "VERIFY_OFFICIAL — याद रखें: 'आवेदन से वितरण तक' या 'सत्यापन से वितरण तक'?",
+     "en": "VERIFY_OFFICIAL — record which stage the clock starts at"
+    },
+    "source_url": "https://VERIFY_OFFICIAL",
+    "verified_on": "0000-00-00"
+   },
+   "channel": [
+    {
+     "kind": "online",
+     "steps": [
+      {
+       "n": 1,
+       "action": {
+        "hi": "नागरिक पोर्टल (ई-साथी) पर पंजीकरण करें और लॉगिन करें",
+        "en": "Register and log in on the citizen portal (e-Sathi)"
+       },
+       "needs_visit": false
+      },
+      {
+       "n": 2,
+       "action": {
+        "hi": "निर्धारित प्रारूप पर आवेदन भरें",
+        "en": "Fill the application in the prescribed format"
+       },
+       "needs_visit": false
+      },
+      {
+       "n": 3,
+       "action": {
+        "hi": "फोटो (50 केबी तक) और सहायक दस्तावेज़ (100 केबी से अधिक नहीं) अपलोड करें",
+        "en": "Upload the photograph (up to 50 KB) and supporting documents (not above 100 KB)"
+       },
+       "needs_visit": false
+      },
+      {
+       "n": 4,
+       "action": {
+        "hi": "स्वप्रमाणित घोषणा पत्र संलग्न करें",
+        "en": "Attach the self-attested declaration"
+       },
+       "needs_visit": false
+      },
+      {
+       "n": 5,
+       "action": {
+        "hi": "सेवा शुल्क (₹15) देकर आवेदन जमा करें",
+        "en": "Pay the service fee (Rs 15) and submit the application"
+       },
+       "needs_visit": false
+      },
+      {
+       "n": 6,
+       "action": {
+        "hi": "होम पेज पर 'आवेदन की स्थिति' से आवेदन की स्थिति देखें",
+        "en": "Check the application under 'आवेदन की स्थिति' (application status) on the home page"
+       },
+       "needs_visit": false
+      },
+      {
+       "n": 7,
+       "action": {
+        "hi": "स्वीकृति के बाद पंजीकृत खाते से डिजिटल हस्ताक्षरित प्रमाण पत्र डाउनलोड करें",
+        "en": "After approval, download the digitally signed certificate from your registered account"
+       },
+       "needs_visit": false
+      }
+     ],
+     "source_url": "https://edistrict.up.gov.in/edistrictup/",
+     "verified_on": "2026-10-17"
+    },
+    {
+     "kind": "csc",
+     "steps": [
+      {
+       "n": 1,
+       "action": {
+        "hi": "निर्धारित प्रारूप का आवेदन पत्र भरें और पासपोर्ट साइज़ फोटो चिपकाएँ",
+        "en": "Fill the prescribed application form and put a passport-size photograph on it"
+       },
+       "needs_visit": false
+      },
+      {
+       "n": 2,
+       "action": {
+        "hi": "स्वप्रमाणित घोषणा पत्र और सहायक दस्तावेज़ों की प्रतियाँ साथ रखें",
+        "en": "Keep the self-attested declaration and copies of the supporting documents ready"
+       },
+       "needs_visit": false
+      },
+      {
+       "n": 3,
+       "action": {
+        "hi": "नजदीकी सीएससी / लोकवाणी केंद्र पर जाकर आवेदन जमा करें",
+        "en": "Go to the nearest CSC / Lokwani centre and deposit the application"
+       },
+       "needs_visit": true
+      },
+      {
+       "n": 4,
+       "action": {
+        "hi": "बाद में ई-डिस्ट्रिक्ट होम पेज से आवेदन की स्थिति देखें",
+        "en": "Later check the application status on the e-District home page"
+       },
+       "needs_visit": false
+      },
+      {
+       "n": 5,
+       "action": {
+        "hi": "स्वीकृति के बाद डिजिटल हस्ताक्षरित प्रमाण पत्र प्राप्त/डाउनलोड करें",
+        "en": "After approval, obtain or download the digitally signed certificate"
+       },
+       "needs_visit": false
+      }
+     ],
+     "source_url": "https://edistrict.up.gov.in/edistrictup/",
+     "verified_on": "2026-10-17"
+    }
+   ],
+   "office": {
+    "type": [
+     "tehsil",
+     "csc"
+    ],
+    "how_to_find": {
+     "hi": "आवेदन किसी भी सीएससी / लोकवाणी केंद्र पर जमा किया जाता है; प्रमाण पत्र तहसीलदार द्वारा जारी होता है।",
+     "en": "Applications are deposited at any CSC / Lokwani centre; the certificate is issued by the Tahsildar."
+    },
+    "source_url": "https://edistrict.up.gov.in/edistrictup/",
+    "verified_on": "2026-10-17"
+   },
+   "escalation": [
+    {
+     "when": {
+      "hi": "आवेदन निर्दिष्ट दिनों से अधिक समय तक एक ही स्थिति पर रहे",
+      "en": "The application stays in the same state longer than the stipulated number of days"
+     },
+     "do": {
+      "hi": "जिले के संबंधित अनुमोदन प्राधिकारी से संपर्क करें",
+      "en": "Contact the concerned approval authority of your district"
+     },
+     "source_url": "https://edistrict.up.gov.in/edistrictup/",
+     "verified_on": "2026-10-17"
+    },
+    {
+     "when": {
+      "hi": "शिकायत दर्ज करानी हो या समय पार हो जाने पर अनुस्मारक भेजना हो",
+      "en": "You need to lodge a complaint or send a reminder after the deadline has passed"
+     },
+     "do": {
+      "hi": "जनसुविधा–समाधान पोर्टल पर शिकायत दर्ज करें और पंजीकृत मोबाइल नंबर से उसकी स्थिति ट्रैक करें",
+      "en": "Register the grievance on the Jansunwai-Samadhan portal and track it with your registered mobile number"
+     },
+     "contact": "https://jansunwai.up.nic.in",
+     "source_url": "https://jansunwai.up.nic.in/?language=en_US",
+     "verified_on": "2026-10-17"
+    },
+    {
+     "when": {
+      "hi": "ई-डिस्ट्रिक्ट पोर्टल या उसकी सेवाओं से जुड़ी सहायता चाहिए हो",
+      "en": "You need help with the e-District portal or the services it carries"
+     },
+     "do": {
+      "hi": "सीईजी हेल्प डेस्क (ई-डिस्ट्रिक्ट उत्तर प्रदेश) से संपर्क करें",
+      "en": "Contact the CeG Help Desk of e-District Uttar Pradesh"
+     },
+     "contact": "0522-2304706",
+     "source_url": "https://meerutdivision.nic.in/project/vigilance-cell/",
+     "verified_on": "2026-10-17"
+    }
+   ],
+   "next_steps": [
+    {
+     "status": "applied",
+     "means": {
+      "hi": "आवेदन जमा हो गया है; ई-डिस्ट्रिक्ट होम पेज पर 'आवेदन की स्थिति' लिंक से स्थिति देखी जा सकती है।",
+      "en": "The application is filed; its status can be seen under the 'आवेदन की स्थिति' (application status) link on the e-District home page."
+     },
+     "eta_days": null,
+     "source_url": "https://edistrict.up.gov.in/edistrictup/",
+     "verified_on": "2026-10-17"
+    },
+    {
+     "status": "verified",
+     "means": {
+      "hi": "दस्तावेज़ सत्यापन हो रहा है; सत्यापन के समय आवश्यक संलग्नक नहीं मिला तो आवेदन अस्वीकार कर दिया जाता है।",
+      "en": "The documents are being verified; if a required enclosure is not found during verification the application is rejected."
+     },
+     "eta_days": null,
+     "source_url": "https://edistrict.up.gov.in/edistrictup/",
+     "verified_on": "2026-10-17"
+    },
+    {
+     "status": "delivered",
+     "means": {
+      "hi": "आवेदन स्वीकृत होने के बाद पंजीकृत नागरिक पोर्टल खाते में डिजिटल हस्ताक्षरित प्रमाण पत्र डाउनलोड करने का लिंक मिलता है (प्रमाण पत्र खोलने के लिए ब्राउज़र में पॉप-अप चालू रखें)।",
+      "en": "Once the application is approved, the digitally signed certificate appears as a download link in your registered citizen-portal account (keep browser pop-ups enabled to open it)."
+     },
+     "eta_days": null,
+     "source_url": "https://edistrict.up.gov.in/edistrictup/",
+     "verified_on": "2026-10-17"
+    },
+    {
+     "status": "rejected",
+     "means": {
+      "hi": "अस्वीकृत आवेदन पर आगे कोई कार्रवाई नहीं होती; दस्तावेज़ पूरे करके दोबारा आवेदन करें और अस्वीकृति के कारण के लिए जिले के अनुमोदन प्राधिकारी से संपर्क करें।",
+      "en": "A rejected application is not acted upon further; complete the documents and apply again, and contact the district's approval authority for the reason of rejection."
+     },
+     "eta_days": null,
+     "source_url": "https://edistrict.up.gov.in/edistrictup/",
+     "verified_on": "2026-10-17"
+    }
+   ],
+   "faqs": [
+    {
+     "q": {
+      "hi": "ऑनलाइन आवेदन में फोटो और दस्तावेज़ का आकार कितना होना चाहिए?",
+      "en": "What size should the photograph and documents be for an online application?"
+     },
+     "a": {
+      "hi": "फोटो की फ़ाइल 50 केबी तक होनी चाहिए और अन्य दस्तावेज़ का आकार 100 केबी से अधिक नहीं; दोनों स्पष्ट और पढ़ने योग्य होने चाहिए।",
+      "en": "The photograph file should be up to 50 KB and no other document above 100 KB; both must be clear and legible."
+     },
+     "source_url": "https://edistrict.up.gov.in/edistrictup/",
+     "verified_on": "2026-10-17"
+    },
+    {
+     "q": {
+      "hi": "आय प्रमाण पत्र कहाँ काम आता है?",
+      "en": "Where is an income certificate used?"
+     },
+     "a": {
+      "hi": "सरकारी रोज़गार प्राप्त करने, विद्यालयों में प्रवेश और आंशिक/पूर्ण शुल्क छूट, तथा सरकार द्वारा दी जाने वाली योजनाओं के लाभ के लिए।",
+      "en": "For obtaining government employment, school admission and partial or full fee exemption, and for the benefits of government schemes."
+     },
+     "source_url": "https://ghaziabad.nic.in/%E0%A4%86%E0%A4%AF-%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%AE%E0%A4%BE%E0%A4%A3-%E0%A4%AA%E0%A4%A4%E0%A5%8D%E0%A4%B0/",
+     "verified_on": "2026-10-17"
+    },
+    {
+     "q": {
+      "hi": "क्या अपलोड किए गए दस्तावेज़ में बाद में बदलाव या हटाना संभव है?",
+      "en": "Can an uploaded document be edited or removed later?"
+     },
+     "a": {
+      "hi": "नहीं, एक बार दस्तावेज़ अपलोड हो जाने के बाद उसे संपादित, हटाया या अपडेट नहीं किया जा सकता।",
+      "en": "No. Once a document has been uploaded it cannot be edited, removed or updated."
+     },
+     "source_url": "https://edistrict.up.gov.in/edistrictup/",
+     "verified_on": "2026-10-17"
+    },
+    {
+     "q": {
+      "hi": "शुल्क की सूची में ₹30 और ₹15 दोनों दिखते हैं, कौन सा लागू होता है?",
+      "en": "The fee list shows both Rs 30 and Rs 15 — which one applies?"
+     },
+     "a": {
+      "hi": "ई-डिस्ट्रिक्ट की सेवा सूची में दोनों पंक्तियाँ छपी हैं: ₹30 (16/11/2020 से) और ₹15 (13/01/2021 से)। बाद वाली तारीख का मान प्रवर्तमान है, यानी ₹15।",
+      "en": "The e-District service list prints both lines: Rs 30 (w.e.f. 16/11/2020) and Rs 15 (w.e.f. 13/01/2021). The later date is the operative value, i.e. Rs 15."
+     },
+     "source_url": "https://edistrict.up.gov.in/eDistrictup/Services/services_hi.aspx",
+     "verified_on": "2026-10-17"
+    },
+    {
+     "q": {
+      "hi": "मेरा जारी प्रमाण पत्र edistrict.up.gov.in पर ऑनलाइन सत्यापित नहीं हो रहा, क्या करूँ?",
+      "en": "My issued certificate does not verify online on edistrict.up.gov.in — what should I do?"
+     },
+     "a": {
+      "hi": "अपने मूल प्रमाण पत्र के साथ संबंधित जिला प्रशासन / अनुमोदन प्राधिकारी से संपर्क करें।",
+      "en": "Contact the concerned district administration / approval authority with your original certificate."
+     },
+     "source_url": "https://edistrict.up.gov.in/edistrictup/",
+     "verified_on": "2026-10-17"
+    },
+    {
+     "q": {
+      "hi": "ऑनलाइन आवेदन करने के बाद काउंटर पर कौन से दस्तावेज़ जमा करने होते हैं?",
+      "en": "After applying online, which documents still have to be deposited at a counter?"
+     },
+     "a": {
+      "hi": "भरा हुआ निर्धारित आवेदन पत्र, पासपोर्ट साइज़ फोटो, स्व-घोषणा प्रमाण पत्र और सेवा के अन्य सहायक दस्तावेज़ों की प्रतियाँ सीएससी / लोकवाणी केंद्र पर जमा करनी होती हैं।",
+      "en": "The filled prescribed form, a passport-size photograph, the self-declaration and copies of the other supporting documents have to be deposited at a CSC / Lokwani centre."
+     },
+     "source_url": "https://edistrict.up.gov.in/edistrictup/",
+     "verified_on": "2026-10-17"
+    },
+    {
+     "q": {
+      "hi": "आय प्रमाण पत्र के लिए आय की कोई सीमा तय है?",
+      "en": "Is there an income limit for getting an income certificate?"
+     },
+     "a": {
+      "hi": "ई-डिस्ट्रिक्ट का आय प्रमाण पत्र अनुभाग किसी आय सीमा प्रकाशित नहीं करता, इसलिए यहाँ उसका कोई मान नहीं दिया गया है; पात्रता की पुष्टि तहसीलदार / अनुमोदन प्राधिकारी से करें।",
+      "en": "The income-certificate section of e-District publishes no income limit, so no value is stored here; confirm eligibility with the Tahsildar / approval authority."
+     },
+     "source_url": "https://edistrict.up.gov.in/eDistrictup/Services/services_hi.aspx",
+     "verified_on": "2026-10-17"
+    }
+   ],
+   "stale_after_days": 180,
+   "confidence_floor": 0.85,
+   "search_terms": [
+    "income certificate",
+    "ay praman patra",
+    "income certificate kaise banaye",
+    "aay ki praman patra",
+    "आय प्रमाण पत्र",
+    "आय प्रमाण पत्र का फार्म",
+    "income certificate ka form",
+    "aay praman patra kaise bane",
+    "earnings certificate",
+    "how to apply for income certificate in UP",
+    "income certificate fee",
+    "income certificate documents"
+   ],
+   "channels_baseline": [
+    {
+     "kind": "online",
+     "steps": 7,
+     "visits": 0,
+     "verified": true
+    },
+    {
+     "kind": "csc",
+     "steps": 5,
+     "visits": 1,
+     "verified": true
+    }
+   ]
+  }
+ ]
+}

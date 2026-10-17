@@ -1,0 +1,692 @@
+{
+    "generatedOn": "2026-10-17",
+    "evaluatedOn": "2026-10-17",
+    "provisionalData": true,
+    "strict": false,
+    "total": 32,
+    "passed": 21,
+    "intentAccuracy": 0.5,
+    "byLanguage": [
+        {
+            "lang": "hi",
+            "answerable": 12,
+            "passed": 6,
+            "accuracy": 0.5
+        },
+        {
+            "lang": "en",
+            "answerable": 10,
+            "passed": 5,
+            "accuracy": 0.5
+        }
+    ],
+    "followUps": 6,
+    "followUpsNeedingSession": 6,
+    "outOfScope": 10,
+    "refusalCoverage": 1.0,
+    "fabrications": 0,
+    "answersWithoutCitations": 0,
+    "answersSpeakingASentinel": 0,
+    "answersBlockedPendingVerification": 7,
+    "refusalsMissingHelpline": 0,
+    "failures": [
+        "hi-002: refused with UNVERIFIED_DATA instead of answering",
+        "hi-007: refused with UNVERIFIED_DATA instead of answering",
+        "hi-008: refused with UNVERIFIED_DATA instead of answering",
+        "hi-010: refused with UNVERIFIED_DATA instead of answering",
+        "hi-011: routed to income-certificate at 0.45499999999999996, expected residence-certificate",
+        "hi-012: routed to income-certificate at 0.45499999999999996, expected birth-certificate",
+        "en-002: refused with UNVERIFIED_DATA instead of answering",
+        "en-006: refused with UNVERIFIED_DATA instead of answering",
+        "en-008: refused with UNVERIFIED_DATA instead of answering",
+        "en-009: routed to income-certificate at 0.45499999999999996, expected residence-certificate",
+        "en-010: routed to income-certificate at 0.45499999999999996, expected birth-certificate"
+    ],
+    "results": [
+        {
+            "id": "hi-001",
+            "lang": "hi",
+            "kind": "ANSWER",
+            "ask": "income certificate ke liye kya kya document chahiye hota hai",
+            "expectedService": "income-certificate",
+            "routedService": "income-certificate",
+            "via": "ALIAS_PHRASE",
+            "confidence": 1.0,
+            "expectedFields": [
+                "documents"
+            ],
+            "answeredFields": [
+                "documents"
+            ],
+            "passed": true
+        },
+        {
+            "id": "hi-002",
+            "lang": "hi",
+            "kind": "ANSWER",
+            "ask": "aay praman patra kitne din me milta hai",
+            "expectedService": "income-certificate",
+            "routedService": "income-certificate",
+            "via": "ALIAS_PHRASE",
+            "confidence": 1.0,
+            "expectedFields": [
+                "sla"
+            ],
+            "answeredFields": [
+                "sla"
+            ],
+            "refusalReason": "UNVERIFIED_DATA",
+            "refusalHasOffice": true,
+            "refusalHasHelpline": true,
+            "blockedByData": true,
+            "passed": false,
+            "failure": "hi-002: refused with UNVERIFIED_DATA instead of answering"
+        },
+        {
+            "id": "hi-003",
+            "lang": "hi",
+            "kind": "ANSWER",
+            "ask": "income certificate ki fees kitni hai",
+            "expectedService": "income-certificate",
+            "routedService": "income-certificate",
+            "via": "ALIAS_PHRASE",
+            "confidence": 1.0,
+            "expectedFields": [
+                "fees"
+            ],
+            "answeredFields": [
+                "fees"
+            ],
+            "passed": true
+        },
+        {
+            "id": "hi-004",
+            "lang": "hi",
+            "kind": "ANSWER",
+            "ask": "income certificate kahan se banega mere area me",
+            "expectedService": "income-certificate",
+            "routedService": "income-certificate",
+            "via": "ALIAS_PHRASE",
+            "confidence": 1.0,
+            "expectedFields": [
+                "office"
+            ],
+            "answeredFields": [
+                "office"
+            ],
+            "passed": true
+        },
+        {
+            "id": "hi-005",
+            "lang": "hi",
+            "kind": "ANSWER",
+            "ask": "aay praman patra ke liye kahan jana padega aur kitna kharcha hoga",
+            "expectedService": "income-certificate",
+            "routedService": "income-certificate",
+            "via": "ALIAS_PHRASE",
+            "confidence": 1.0,
+            "expectedFields": [
+                "office",
+                "fees"
+            ],
+            "answeredFields": [
+                "fees",
+                "office"
+            ],
+            "passed": true
+        },
+        {
+            "id": "hi-006",
+            "lang": "hi",
+            "kind": "FOLLOW_UP",
+            "ask": "form bhar diya ab aage kya hoga",
+            "expectedService": "income-certificate",
+            "routedService": "income-certificate",
+            "via": "SESSION_CONTEXT",
+            "confidence": 0.6,
+            "expectedFields": [
+                "next_steps"
+            ],
+            "answeredFields": [
+                "next_steps"
+            ],
+            "reachableCold": false,
+            "passed": true
+        },
+        {
+            "id": "hi-007",
+            "lang": "hi",
+            "kind": "FOLLOW_UP",
+            "ask": "sath din se application pending hai koi shikayat kaise karu",
+            "expectedService": "income-certificate",
+            "routedService": "income-certificate",
+            "via": "SESSION_CONTEXT",
+            "confidence": 0.6,
+            "expectedFields": [
+                "escalation"
+            ],
+            "answeredFields": [
+                "escalation",
+                "sla"
+            ],
+            "refusalReason": "UNVERIFIED_DATA",
+            "refusalHasOffice": true,
+            "refusalHasHelpline": true,
+            "blockedByData": true,
+            "reachableCold": false,
+            "passed": false,
+            "failure": "hi-007: refused with UNVERIFIED_DATA instead of answering"
+        },
+        {
+            "id": "hi-008",
+            "lang": "hi",
+            "kind": "ANSWER",
+            "ask": "mujhe income certificate chahiye kaise banaye",
+            "expectedService": "income-certificate",
+            "routedService": "income-certificate",
+            "via": "ALIAS_PHRASE",
+            "confidence": 1.0,
+            "expectedFields": [
+                "eligibility",
+                "documents",
+                "fees",
+                "sla",
+                "office"
+            ],
+            "answeredFields": [
+                "eligibility",
+                "documents",
+                "fees",
+                "sla",
+                "office"
+            ],
+            "refusalReason": "UNVERIFIED_DATA",
+            "refusalHasOffice": true,
+            "refusalHasHelpline": true,
+            "blockedByData": true,
+            "passed": false,
+            "failure": "hi-008: refused with UNVERIFIED_DATA instead of answering"
+        },
+        {
+            "id": "hi-009",
+            "lang": "hi",
+            "kind": "FOLLOW_UP",
+            "ask": "online application bheja tha, uska status kaise dekh sakte hain",
+            "expectedService": "income-certificate",
+            "routedService": "income-certificate",
+            "via": "SESSION_CONTEXT",
+            "confidence": 0.6,
+            "expectedFields": [
+                "next_steps"
+            ],
+            "answeredFields": [
+                "next_steps"
+            ],
+            "reachableCold": false,
+            "passed": true
+        },
+        {
+            "id": "hi-010",
+            "lang": "hi",
+            "kind": "ANSWER",
+            "ask": "kya majdoor ka bacha income certificate le sakta hai",
+            "expectedService": "income-certificate",
+            "routedService": "income-certificate",
+            "via": "ALIAS_PHRASE",
+            "confidence": 1.0,
+            "expectedFields": [
+                "eligibility"
+            ],
+            "answeredFields": [
+                "eligibility"
+            ],
+            "refusalReason": "UNVERIFIED_DATA",
+            "refusalHasOffice": true,
+            "refusalHasHelpline": true,
+            "blockedByData": true,
+            "passed": false,
+            "failure": "hi-010: refused with UNVERIFIED_DATA instead of answering"
+        },
+        {
+            "id": "hi-011",
+            "lang": "hi",
+            "kind": "ANSWER",
+            "ask": "residence certificate ke liye kitne saal ka rahna zaroori hai",
+            "expectedService": "residence-certificate",
+            "routedService": "income-certificate",
+            "via": "ALIAS_TOKENS",
+            "confidence": 0.45499999999999996,
+            "expectedFields": [
+                "eligibility"
+            ],
+            "answeredFields": [
+                "eligibility",
+                "documents",
+                "fees",
+                "sla",
+                "office"
+            ],
+            "refusalReason": "BELOW_CONFIDENCE",
+            "refusalHasOffice": true,
+            "refusalHasHelpline": true,
+            "passed": false,
+            "failure": "hi-011: routed to income-certificate at 0.45499999999999996, expected residence-certificate"
+        },
+        {
+            "id": "hi-012",
+            "lang": "hi",
+            "kind": "ANSWER",
+            "ask": "birth certificate online apply karne ke baad office jaana padta hai kya",
+            "expectedService": "birth-certificate",
+            "routedService": "income-certificate",
+            "via": "ALIAS_TOKENS",
+            "confidence": 0.45499999999999996,
+            "expectedFields": [
+                "channel"
+            ],
+            "answeredFields": [
+                "channel",
+                "office"
+            ],
+            "refusalReason": "BELOW_CONFIDENCE",
+            "refusalHasOffice": true,
+            "refusalHasHelpline": true,
+            "passed": false,
+            "failure": "hi-012: routed to income-certificate at 0.45499999999999996, expected birth-certificate"
+        },
+        {
+            "id": "en-001",
+            "lang": "en",
+            "kind": "ANSWER",
+            "ask": "what documents are required for an income certificate in Uttar Pradesh",
+            "expectedService": "income-certificate",
+            "routedService": "income-certificate",
+            "via": "ALIAS_PHRASE",
+            "confidence": 1.0,
+            "expectedFields": [
+                "documents"
+            ],
+            "answeredFields": [
+                "documents"
+            ],
+            "passed": true
+        },
+        {
+            "id": "en-002",
+            "lang": "en",
+            "kind": "ANSWER",
+            "ask": "how many days does it take to get an income certificate",
+            "expectedService": "income-certificate",
+            "routedService": "income-certificate",
+            "via": "ALIAS_PHRASE",
+            "confidence": 1.0,
+            "expectedFields": [
+                "sla"
+            ],
+            "answeredFields": [
+                "sla"
+            ],
+            "refusalReason": "UNVERIFIED_DATA",
+            "refusalHasOffice": true,
+            "refusalHasHelpline": true,
+            "blockedByData": true,
+            "passed": false,
+            "failure": "en-002: refused with UNVERIFIED_DATA instead of answering"
+        },
+        {
+            "id": "en-003",
+            "lang": "en",
+            "kind": "ANSWER",
+            "ask": "what is the fee for an income certificate",
+            "expectedService": "income-certificate",
+            "routedService": "income-certificate",
+            "via": "ALIAS_PHRASE",
+            "confidence": 1.0,
+            "expectedFields": [
+                "fees"
+            ],
+            "answeredFields": [
+                "fees"
+            ],
+            "passed": true
+        },
+        {
+            "id": "en-004",
+            "lang": "en",
+            "kind": "ANSWER",
+            "ask": "where do I go in my area to apply for an income certificate",
+            "expectedService": "income-certificate",
+            "routedService": "income-certificate",
+            "via": "ALIAS_PHRASE",
+            "confidence": 1.0,
+            "expectedFields": [
+                "office"
+            ],
+            "answeredFields": [
+                "office",
+                "channel"
+            ],
+            "passed": true
+        },
+        {
+            "id": "en-005",
+            "lang": "en",
+            "kind": "FOLLOW_UP",
+            "ask": "I submitted the form, what happens next",
+            "expectedService": "income-certificate",
+            "routedService": "income-certificate",
+            "via": "SESSION_CONTEXT",
+            "confidence": 0.6,
+            "expectedFields": [
+                "next_steps"
+            ],
+            "answeredFields": [
+                "next_steps"
+            ],
+            "reachableCold": false,
+            "passed": true
+        },
+        {
+            "id": "en-006",
+            "lang": "en",
+            "kind": "FOLLOW_UP",
+            "ask": "the application has been pending for 60 days, how do I complain",
+            "expectedService": "income-certificate",
+            "routedService": "income-certificate",
+            "via": "SESSION_CONTEXT",
+            "confidence": 0.6,
+            "expectedFields": [
+                "escalation"
+            ],
+            "answeredFields": [
+                "escalation",
+                "sla"
+            ],
+            "refusalReason": "UNVERIFIED_DATA",
+            "refusalHasOffice": true,
+            "refusalHasHelpline": true,
+            "blockedByData": true,
+            "reachableCold": false,
+            "passed": false,
+            "failure": "en-006: refused with UNVERIFIED_DATA instead of answering"
+        },
+        {
+            "id": "en-007",
+            "lang": "en",
+            "kind": "FOLLOW_UP",
+            "ask": "how do I check the status of my online application",
+            "expectedService": "income-certificate",
+            "routedService": "income-certificate",
+            "via": "SESSION_CONTEXT",
+            "confidence": 0.6,
+            "expectedFields": [
+                "next_steps"
+            ],
+            "answeredFields": [
+                "next_steps"
+            ],
+            "reachableCold": false,
+            "passed": true
+        },
+        {
+            "id": "en-008",
+            "lang": "en",
+            "kind": "ANSWER",
+            "ask": "am I eligible for an income certificate if I am a daily wage worker",
+            "expectedService": "income-certificate",
+            "routedService": "income-certificate",
+            "via": "ALIAS_PHRASE",
+            "confidence": 1.0,
+            "expectedFields": [
+                "eligibility"
+            ],
+            "answeredFields": [
+                "eligibility"
+            ],
+            "refusalReason": "UNVERIFIED_DATA",
+            "refusalHasOffice": true,
+            "refusalHasHelpline": true,
+            "blockedByData": true,
+            "passed": false,
+            "failure": "en-008: refused with UNVERIFIED_DATA instead of answering"
+        },
+        {
+            "id": "en-009",
+            "lang": "en",
+            "kind": "ANSWER",
+            "ask": "how long do I need to have lived here for a residence certificate",
+            "expectedService": "residence-certificate",
+            "routedService": "income-certificate",
+            "via": "ALIAS_TOKENS",
+            "confidence": 0.45499999999999996,
+            "expectedFields": [
+                "eligibility"
+            ],
+            "answeredFields": [
+                "eligibility",
+                "documents",
+                "fees",
+                "sla",
+                "office"
+            ],
+            "refusalReason": "BELOW_CONFIDENCE",
+            "refusalHasOffice": true,
+            "refusalHasHelpline": true,
+            "passed": false,
+            "failure": "en-009: routed to income-certificate at 0.45499999999999996, expected residence-certificate"
+        },
+        {
+            "id": "en-010",
+            "lang": "en",
+            "kind": "ANSWER",
+            "ask": "do I still have to visit an office after applying online for a birth certificate",
+            "expectedService": "birth-certificate",
+            "routedService": "income-certificate",
+            "via": "ALIAS_TOKENS",
+            "confidence": 0.45499999999999996,
+            "expectedFields": [
+                "channel"
+            ],
+            "answeredFields": [
+                "channel",
+                "office",
+                "next_steps"
+            ],
+            "refusalReason": "BELOW_CONFIDENCE",
+            "refusalHasOffice": true,
+            "refusalHasHelpline": true,
+            "passed": false,
+            "failure": "en-010: routed to income-certificate at 0.45499999999999996, expected birth-certificate"
+        },
+        {
+            "id": "oos-001",
+            "lang": "hi",
+            "kind": "OUT_OF_SCOPE",
+            "ask": "jaati praman patra ke liye kya karna hoga",
+            "expectedService": null,
+            "routedService": "income-certificate",
+            "via": "ALIAS_TOKENS",
+            "confidence": 0.5966666666666667,
+            "expectedFields": [],
+            "answeredFields": [
+                "eligibility",
+                "documents",
+                "fees",
+                "sla",
+                "office"
+            ],
+            "refusalReason": "OUT_OF_SCOPE_TOPIC",
+            "refusalHasOffice": true,
+            "refusalHasHelpline": true,
+            "passed": true
+        },
+        {
+            "id": "oos-002",
+            "lang": "hi",
+            "kind": "OUT_OF_SCOPE",
+            "ask": "death certificate ka process bata do",
+            "expectedService": null,
+            "routedService": "income-certificate",
+            "via": "ALIAS_TOKENS",
+            "confidence": 0.45499999999999996,
+            "expectedFields": [],
+            "answeredFields": [
+                "channel"
+            ],
+            "refusalReason": "OUT_OF_SCOPE_TOPIC",
+            "refusalHasOffice": true,
+            "refusalHasHelpline": true,
+            "passed": true
+        },
+        {
+            "id": "oos-003",
+            "lang": "hi",
+            "kind": "OUT_OF_SCOPE",
+            "ask": "mere naam ka application kahan atka hai",
+            "expectedService": null,
+            "routedService": null,
+            "via": "NONE",
+            "confidence": 0.03,
+            "expectedFields": [],
+            "answeredFields": [],
+            "refusalReason": "OUT_OF_SCOPE_TOPIC",
+            "refusalHasOffice": true,
+            "refusalHasHelpline": true,
+            "passed": true
+        },
+        {
+            "id": "oos-004",
+            "lang": "hi",
+            "kind": "OUT_OF_SCOPE",
+            "ask": "meri income 1.9 lakh hai, kya mujhe milega bata do",
+            "expectedService": null,
+            "routedService": "income-certificate",
+            "via": "ALIAS_TOKENS",
+            "confidence": 0.45499999999999996,
+            "expectedFields": [],
+            "answeredFields": [
+                "eligibility",
+                "documents",
+                "fees",
+                "sla",
+                "office"
+            ],
+            "refusalReason": "OUT_OF_SCOPE_TOPIC",
+            "refusalHasOffice": true,
+            "refusalHasHelpline": true,
+            "passed": true
+        },
+        {
+            "id": "oos-005",
+            "lang": "hi",
+            "kind": "OUT_OF_SCOPE",
+            "ask": "Gautam Buddha Nagar me income certificate ki fee kitni hai",
+            "expectedService": null,
+            "routedService": "income-certificate",
+            "via": "ALIAS_PHRASE",
+            "confidence": 1.0,
+            "expectedFields": [],
+            "answeredFields": [
+                "fees"
+            ],
+            "refusalReason": "DISTRICT_NOT_COVERED",
+            "refusalHasOffice": true,
+            "refusalHasHelpline": true,
+            "passed": true
+        },
+        {
+            "id": "oos-006",
+            "lang": "hi",
+            "kind": "OUT_OF_SCOPE",
+            "ask": "fee online bhar do mere liye",
+            "expectedService": null,
+            "routedService": null,
+            "via": "NONE",
+            "confidence": 0.2833333333333333,
+            "expectedFields": [],
+            "answeredFields": [],
+            "refusalReason": "OUT_OF_SCOPE_TOPIC",
+            "refusalHasOffice": true,
+            "refusalHasHelpline": true,
+            "passed": true
+        },
+        {
+            "id": "oos-007",
+            "lang": "hi",
+            "kind": "OUT_OF_SCOPE",
+            "ask": "purani yojana ke tahat free certificate milta tha ab bhi milega",
+            "expectedService": null,
+            "routedService": "income-certificate",
+            "via": "ALIAS_TOKENS",
+            "confidence": 0.45499999999999996,
+            "expectedFields": [],
+            "answeredFields": [
+                "fees"
+            ],
+            "refusalReason": "BELOW_CONFIDENCE",
+            "refusalHasOffice": true,
+            "refusalHasHelpline": true,
+            "passed": true
+        },
+        {
+            "id": "oos-008",
+            "lang": "hi",
+            "kind": "OUT_OF_SCOPE",
+            "ask": "agent 500 rupaye maang raha hai, sahi hai ya galat",
+            "expectedService": null,
+            "routedService": null,
+            "via": "NONE",
+            "confidence": 0.03,
+            "expectedFields": [],
+            "answeredFields": [],
+            "refusalReason": "OUT_OF_SCOPE_TOPIC",
+            "refusalHasOffice": true,
+            "refusalHasHelpline": true,
+            "passed": true
+        },
+        {
+            "id": "oos-009",
+            "lang": "hi",
+            "kind": "OUT_OF_SCOPE",
+            "ask": "Bihar me income certificate ka rule kya hai",
+            "expectedService": null,
+            "routedService": "income-certificate",
+            "via": "ALIAS_PHRASE",
+            "confidence": 1.0,
+            "expectedFields": [],
+            "answeredFields": [
+                "eligibility",
+                "documents",
+                "fees",
+                "sla",
+                "office"
+            ],
+            "refusalReason": "OUT_OF_SCOPE_TOPIC",
+            "refusalHasOffice": true,
+            "refusalHasHelpline": true,
+            "passed": true
+        },
+        {
+            "id": "oos-010",
+            "lang": "hi",
+            "kind": "OUT_OF_SCOPE",
+            "ask": "income certifi kete han du ma",
+            "expectedService": null,
+            "routedService": "income-certificate",
+            "via": "ALIAS_TOKENS",
+            "confidence": 0.45499999999999996,
+            "expectedFields": [],
+            "answeredFields": [
+                "eligibility",
+                "documents",
+                "fees",
+                "sla",
+                "office"
+            ],
+            "refusalReason": "BELOW_CONFIDENCE",
+            "refusalHasOffice": true,
+            "refusalHasHelpline": true,
+            "passed": true
+        }
+    ]
+}

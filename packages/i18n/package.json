@@ -1,0 +1,7 @@
+{
+  "name": "@seva-marg/i18n",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "UI strings for Hindi and English, with a parity gate. Answers never live here - they live in the cited catalogue."
+}

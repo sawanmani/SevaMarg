@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- android/app/src/main/res/values/strings.xml
+     Exactly one string, and it is here under duress. Android reads the launcher label from resources
+     before any Kotlin runs, so this is the one piece of wording that cannot come from
+     assets/i18n/<lang>.json. Everything the citizen actually sees inside the app is an i18n key
+     (app.name = सेवा-मार्ग / Seva-Marg) and parity.mjs is what keeps the two languages level. -->
+<resources>
+    <string name="app_name">Seva-Marg</string>
+</resources>

@@ -1,0 +1,266 @@
+{
+  "_comment": "SYNTHETIC TEST FIXTURE - NOT OFFICIAL DATA, NOT SHIPPED. Lives in src/test/resources so it can never reach the APK (only src/main/assets does). Its job is to let :core tests exercise a FULLY VERIFIED catalogue while packages/catalogue/data is still VERIFY_OFFICIAL: provisional rendering, staleness, ambiguity and citation tests need real dates and non-sentinel text, and inventing that data in the shipped file would break the one promise this project makes. Every value below is fake on purpose (fixture.invalid hosts, placeholder helpline).",
+  "schema_version": 1,
+  "generator": "android/core/src/test/resources/fixture-catalogue.json",
+  "generated_on": "2026-09-15",
+  "provisional": false,
+  "langs": ["hi", "en"],
+  "statement": "UPNIC-004",
+  "citation_rule": "every citizen-facing fact carries source_url + verified_on",
+  "source_hosts": ["fixture.invalid"],
+  "services": [
+    {
+      "service_id": "income-certificate",
+      "state": "UP",
+      "district_scope": "state",
+      "lang": {
+        "hi": {
+          "name": "आय प्रमाण पत्र",
+          "aliases": ["आय प्रमाण पत्र कैसे बनवाएँ", "आय प्रमाण पत्र की फीस कितनी है", "इनकम सर्टिफिकेट"]
+        },
+        "en": {
+          "name": "Income Certificate",
+          "aliases": ["income certificate", "earning certificate", "how to get an income certificate in Uttar Pradesh"]
+        }
+      },
+      "eligibility": [
+        {
+          "text": {
+            "hi": "उत्तर प्रदेश का स्थायी निवासी, जिसकी वार्षिक पारिवारिक आय निर्धारित सीमा से कम हो",
+            "en": "A permanent resident of Uttar Pradesh whose annual family income is below the notified limit"
+          },
+          "source_url": "https://fixture.invalid/edistrict/income#eligibility",
+          "verified_on": "2026-09-10"
+        }
+      ],
+      "documents": [
+        {
+          "item": { "hi": "आधार कार्ड (निवास प्रमाण)", "en": "Aadhaar card (proof of residence)" },
+          "who": "applicant",
+          "copies": 1,
+          "attestation": true,
+          "format": "self-attested copy",
+          "source_url": "https://fixture.invalid/edistrict/income#documents",
+          "verified_on": "2026-09-10"
+        },
+        {
+          "item": { "hi": "वेतन वृत्त या आय शपथ पत्र", "en": "Salary slip or income affidavit" },
+          "who": "either",
+          "copies": 2,
+          "attestation": false,
+          "source_url": "https://fixture.invalid/csc/income#documents",
+          "verified_on": "2026-09-12"
+        }
+      ],
+      "fees": [
+        {
+          "item": { "hi": "प्रमाण पत्र शुल्क (पहली प्रति)", "en": "Certificate fee (first copy)" },
+          "amount_inr": 25,
+          "mode": "either",
+          "source_url": "https://fixture.invalid/edistrict/income#fees",
+          "verified_on": "2026-09-10"
+        },
+        {
+          "item": { "hi": "अतिरिक्त प्रति", "en": "Additional copy" },
+          "amount_inr": 10,
+          "mode": "cash",
+          "free_below_income_inr": 50000,
+          "source_url": "https://fixture.invalid/edistrict/income#fees",
+          "verified_on": "2026-09-10"
+        }
+      ],
+      "sla": {
+        "days": 30,
+        "scope": {
+          "hi": "आवेदन स्वीकार होने से प्रमाण पत्र वितरण तक",
+          "en": "From application acceptance to certificate delivery"
+        },
+        "source_url": "https://fixture.invalid/charter/income#sla",
+        "verified_on": "2026-09-11"
+      },
+      "channel": [
+        {
+          "kind": "online",
+          "steps": [
+            { "n": 1, "action": { "hi": "e-District पर लॉगिन करें", "en": "Log in to e-District" }, "needs_visit": false },
+            { "n": 2, "action": { "hi": "फॉर्म भरें और दस्तावेज़ अपलोड करें", "en": "Fill the form and upload documents" }, "needs_visit": false },
+            { "n": 3, "action": { "hi": "शुल्क ऑनलाइन चुकाएँ", "en": "Pay the fee online" }, "needs_visit": false }
+          ],
+          "source_url": "https://fixture.invalid/edistrict/income#online",
+          "verified_on": "2026-09-10"
+        },
+        {
+          "kind": "csc",
+          "steps": [
+            { "n": 1, "action": { "hi": "नज़दीकी CSC केंद्र पर जाएँ", "en": "Visit the nearest CSC centre" }, "needs_visit": true },
+            { "n": 2, "action": { "hi": "फॉर्म और दस्तावेज़ जमा करें", "en": "Give the operator the form and documents" }, "needs_visit": false },
+            { "n": 3, "action": { "hi": "रसीद और शुल्क जमा करें", "en": "Collect the receipt and pay" }, "needs_visit": false }
+          ],
+          "source_url": "https://fixture.invalid/csc/income#process",
+          "verified_on": "2026-09-12"
+        }
+      ],
+      "office": {
+        "type": ["tehsil", "csc"],
+        "how_to_find": {
+          "hi": "अपने तहसील के लेखपाल या CSC केंद्र की सूची e-District पृष्ठ पर मिलती है",
+          "en": "The list of lekhpal and CSC centres for your tehsil is published on the e-District page"
+        },
+        "source_url": "https://fixture.invalid/edistrict/income#office",
+        "verified_on": "2026-09-10"
+      },
+      "escalation": [
+        {
+          "when": { "hi": "निर्धारित समय के बाद भी प्रमाण पत्र न मिले", "en": "The certificate has not arrived after the notified time" },
+          "do": { "hi": "तहसील के संबंधित अधिकारी को लिखित शिकायत दें", "en": "File a written complaint with the tehsil officer" },
+          "contact": "1800-000-0000",
+          "source_url": "https://fixture.invalid/charter/income#escalation",
+          "verified_on": "2026-09-11"
+        }
+      ],
+      "next_steps": [
+        {
+          "status": "applied",
+          "means": { "hi": "आवेदन जमा हो गया, रसीद संभालकर रखें", "en": "The application is submitted; keep the receipt" },
+          "eta_days": null,
+          "source_url": "https://fixture.invalid/edistrict/income#status",
+          "verified_on": "2026-09-10"
+        },
+        {
+          "status": "verified",
+          "means": { "hi": "लेखपाल ने घर का निवास और आय जाँच ली है", "en": "The lekhpal has verified residence and income" },
+          "eta_days": 15,
+          "source_url": "https://fixture.invalid/edistrict/income#status",
+          "verified_on": "2026-09-10"
+        },
+        {
+          "status": "delivered",
+          "means": { "hi": "प्रमाण पत्र CSC से डाउनलोड या एकत्र किया जा सकता है", "en": "The certificate can be downloaded or collected at a CSC" },
+          "eta_days": 30,
+          "source_url": "https://fixture.invalid/edistrict/income#status",
+          "verified_on": "2026-09-10"
+        }
+      ],
+      "faqs": [
+        {
+          "q": { "hi": "क्या पुराना प्रमाण पत्र चलता है?", "en": "Is an old certificate still usable?" },
+          "a": { "hi": "नहीं, वैधता अवधि पूरी होने पर दोबारा आवेदन करना होता है", "en": "No, apply again once the validity period is over" },
+          "source_url": "https://fixture.invalid/edistrict/income#faq",
+          "verified_on": "2026-09-10"
+        }
+      ],
+      "stale_after_days": 180,
+      "confidence_floor": 0.85,
+      "search_terms": ["income certificate", "आय प्रमाण पत्र", "aay praman patra", "income certificate fees"],
+      "channels_baseline": [
+        { "kind": "online", "steps": 3, "visits": 0, "verified": true },
+        { "kind": "csc", "steps": 3, "visits": 1, "verified": true }
+      ]
+    },
+    {
+      "service_id": "residence-certificate",
+      "state": "UP",
+      "district_scope": "state",
+      "lang": {
+        "hi": { "name": "निवास प्रमाण पत्र", "aliases": ["निवास प्रमाण पत्र कैसे बनवाएँ", "रिजिडेंस सर्टिफिकेट"] },
+        "en": { "name": "Residence Certificate", "aliases": ["residence certificate", "domicile certificate"] }
+      },
+      "eligibility": [
+        {
+          "text": { "hi": "उत्तर प्रदेश में निर्धारित अवधि तक रहने वाला व्यक्ति", "en": "A person who has resided in Uttar Pradesh for the notified period" },
+          "source_url": "https://fixture.invalid/edistrict/residence#eligibility",
+          "verified_on": "2025-01-05"
+        }
+      ],
+      "documents": [
+        {
+          "item": { "hi": "बिजली बिल या किराया रसीद", "en": "Electricity bill or rent receipt" },
+          "who": "applicant",
+          "copies": 1,
+          "source_url": "https://fixture.invalid/edistrict/residence#documents",
+          "verified_on": "2025-01-05"
+        }
+      ],
+      "fees": [
+        {
+          "item": { "hi": "प्रमाण पत्र शुल्क", "en": "Certificate fee" },
+          "amount_inr": 25,
+          "mode": "cash",
+          "source_url": "https://fixture.invalid/edistrict/residence#fees",
+          "verified_on": "2025-01-05"
+        }
+      ],
+      "sla": {
+        "days": 21,
+        "scope": { "hi": "आवेदन से वितरण तक", "en": "From application to delivery" },
+        "source_url": "https://fixture.invalid/charter/residence#sla",
+        "verified_on": "2025-01-05"
+      },
+      "channel": [
+        {
+          "kind": "tehsil",
+          "steps": [
+            { "n": 1, "action": { "hi": "तहसील में आवेदन जमा करें", "en": "Submit the application at the tehsil" }, "needs_visit": true }
+          ],
+          "source_url": "https://fixture.invalid/edistrict/residence#process",
+          "verified_on": "2025-01-05"
+        }
+      ],
+      "office": {
+        "type": ["tehsil"],
+        "how_to_find": { "hi": "अपने तहसील कार्यालय के प्रमाण पत्र काउंटर पर जाएँ", "en": "Go to the certificate counter of your tehsil office" },
+        "source_url": "https://fixture.invalid/edistrict/residence#office",
+        "verified_on": "2025-01-05"
+      },
+      "escalation": [
+        {
+          "when": { "hi": "काउंटर पर आवेदन रोक दिया जाए", "en": "The application is held up at the counter" },
+          "contact": "1800-000-0000",
+          "source_url": "https://fixture.invalid/charter/residence#escalation",
+          "verified_on": "2025-01-05"
+        }
+      ],
+      "next_steps": [
+        {
+          "status": "verified",
+          "means": { "hi": "थाना प्रतिवेदन के बाद प्रमाण पत्र बनता है", "en": "The certificate is issued after the police report" },
+          "source_url": "https://fixture.invalid/edistrict/residence#status",
+          "verified_on": "2025-01-05"
+        }
+      ],
+      "faqs": [],
+      "stale_after_days": 180,
+      "confidence_floor": 0.85,
+      "search_terms": ["residence certificate", "निवास प्रमाण पत्र", "nivas praman patra"],
+      "channels_baseline": [{ "kind": "tehsil", "steps": 1, "visits": 1, "verified": true }]
+    },
+    {
+      "service_id": "unverified-sample-service",
+      "state": "UP",
+      "district_scope": "state",
+      "lang": {
+        "hi": { "name": "नमूना सेवा (सत्यापित नहीं)", "aliases": ["नमूना सेवा"] },
+        "en": { "name": "Sample service (unverified)", "aliases": ["sample service"] }
+      },
+      "eligibility": [
+        {
+          "text": { "hi": "VERIFY_OFFICIAL", "en": "VERIFY_OFFICIAL" },
+          "source_url": "https://VERIFY_OFFICIAL",
+          "verified_on": "0000-00-00"
+        }
+      ],
+      "documents": [],
+      "fees": [],
+      "sla": null,
+      "channel": [],
+      "office": null,
+      "escalation": [],
+      "next_steps": [],
+      "faqs": [],
+      "stale_after_days": 180,
+      "confidence_floor": 0.9,
+      "search_terms": ["sample service", "नमूना सेवा"],
+      "channels_baseline": []
+    }
+  ]
+}

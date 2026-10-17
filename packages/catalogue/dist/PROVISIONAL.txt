@@ -1,0 +1,2 @@
+This asset was built with unverified fields on 2026-10-17.
+It is for UI development only and must not be shipped in a submission build.

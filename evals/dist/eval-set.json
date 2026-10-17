@@ -1,0 +1,358 @@
+{
+ "generator": "evals/build.mjs",
+ "generated_on": "2026-10-17",
+ "provisional": true,
+ "strict": false,
+ "targets": {
+  "hi": 50,
+  "en": 50,
+  "oos": 15
+ },
+ "counts": {
+  "hi": 12,
+  "en": 10,
+  "oos": 10
+ },
+ "total": 32,
+ "refusal_cases": 10,
+ "twins_paired": 10,
+ "unreachable_by_aliases": [
+  {
+   "id": "hi-007",
+   "ask": "sath din se application pending hai koi shikayat kaise karu",
+   "service": "income-certificate"
+  },
+  {
+   "id": "hi-009",
+   "ask": "online application bheja tha, uska status kaise dekh sakte hain",
+   "service": "income-certificate"
+  },
+  {
+   "id": "en-006",
+   "ask": "the application has been pending for 60 days, how do I complain",
+   "service": "income-certificate"
+  },
+  {
+   "id": "en-007",
+   "ask": "how do I check the status of my online application",
+   "service": "income-certificate"
+  }
+ ],
+ "items": [
+  {
+   "id": "hi-001",
+   "ask": "income certificate ke liye kya kya document chahiye hota hai",
+   "service": "income-certificate",
+   "expect_fields": [
+    "documents"
+   ],
+   "must_not_say": [
+    "aapke liye eligible hai",
+    "guarantee"
+   ],
+   "lang": "hi",
+   "source": "evals/questions_hi.sample.yaml"
+  },
+  {
+   "id": "hi-002",
+   "ask": "aay praman patra kitne din me milta hai",
+   "service": "income-certificate",
+   "expect_fields": [
+    "sla"
+   ],
+   "lang": "hi",
+   "source": "evals/questions_hi.sample.yaml"
+  },
+  {
+   "id": "hi-003",
+   "ask": "income certificate ki fees kitni hai",
+   "service": "income-certificate",
+   "expect_fields": [
+    "fees"
+   ],
+   "lang": "hi",
+   "source": "evals/questions_hi.sample.yaml"
+  },
+  {
+   "id": "hi-004",
+   "ask": "income certificate kahan se banega mere area me",
+   "service": "income-certificate",
+   "expect_fields": [
+    "office"
+   ],
+   "lang": "hi",
+   "source": "evals/questions_hi.sample.yaml"
+  },
+  {
+   "id": "hi-005",
+   "ask": "aay praman patra ke liye kahan jana padega aur kitna kharcha hoga",
+   "service": "income-certificate",
+   "expect_fields": [
+    "office",
+    "fees"
+   ],
+   "lang": "hi",
+   "source": "evals/questions_hi.sample.yaml"
+  },
+  {
+   "id": "hi-006",
+   "ask": "form bhar diya ab aage kya hoga",
+   "service": "income-certificate",
+   "intent": "next_steps",
+   "expect_fields": [
+    "next_steps"
+   ],
+   "lang": "hi",
+   "source": "evals/questions_hi.sample.yaml"
+  },
+  {
+   "id": "hi-007",
+   "ask": "sath din se application pending hai koi shikayat kaise karu",
+   "service": "income-certificate",
+   "intent": "escalation",
+   "expect_fields": [
+    "escalation"
+   ],
+   "lang": "hi",
+   "source": "evals/questions_hi.sample.yaml"
+  },
+  {
+   "id": "hi-008",
+   "ask": "mujhe income certificate chahiye kaise banaye",
+   "service": "income-certificate",
+   "expect_fields": [
+    "eligibility",
+    "documents",
+    "fees",
+    "sla",
+    "office"
+   ],
+   "lang": "hi",
+   "source": "evals/questions_hi.sample.yaml"
+  },
+  {
+   "id": "hi-009",
+   "ask": "online application bheja tha, uska status kaise dekh sakte hain",
+   "service": "income-certificate",
+   "intent": "status_lookup",
+   "expect_fields": [
+    "next_steps"
+   ],
+   "lang": "hi",
+   "source": "evals/questions_hi.sample.yaml"
+  },
+  {
+   "id": "hi-010",
+   "ask": "kya majdoor ka bacha income certificate le sakta hai",
+   "service": "income-certificate",
+   "expect_fields": [
+    "eligibility"
+   ],
+   "lang": "hi",
+   "source": "evals/questions_hi.sample.yaml"
+  },
+  {
+   "id": "hi-011",
+   "ask": "residence certificate ke liye kitne saal ka rahna zaroori hai",
+   "service": "residence-certificate",
+   "expect_fields": [
+    "eligibility"
+   ],
+   "lang": "hi",
+   "source": "evals/questions_hi.sample.yaml"
+  },
+  {
+   "id": "hi-012",
+   "ask": "birth certificate online apply karne ke baad office jaana padta hai kya",
+   "service": "birth-certificate",
+   "expect_fields": [
+    "channel"
+   ],
+   "lang": "hi",
+   "source": "evals/questions_hi.sample.yaml"
+  },
+  {
+   "id": "en-001",
+   "ask": "what documents are required for an income certificate in Uttar Pradesh",
+   "service": "income-certificate",
+   "expect_fields": [
+    "documents"
+   ],
+   "twin_of": "hi-001",
+   "lang": "en",
+   "source": "evals/questions_en.sample.yaml"
+  },
+  {
+   "id": "en-002",
+   "ask": "how many days does it take to get an income certificate",
+   "service": "income-certificate",
+   "expect_fields": [
+    "sla"
+   ],
+   "twin_of": "hi-002",
+   "lang": "en",
+   "source": "evals/questions_en.sample.yaml"
+  },
+  {
+   "id": "en-003",
+   "ask": "what is the fee for an income certificate",
+   "service": "income-certificate",
+   "expect_fields": [
+    "fees"
+   ],
+   "twin_of": "hi-003",
+   "lang": "en",
+   "source": "evals/questions_en.sample.yaml"
+  },
+  {
+   "id": "en-004",
+   "ask": "where do I go in my area to apply for an income certificate",
+   "service": "income-certificate",
+   "expect_fields": [
+    "office"
+   ],
+   "twin_of": "hi-004",
+   "lang": "en",
+   "source": "evals/questions_en.sample.yaml"
+  },
+  {
+   "id": "en-005",
+   "ask": "I submitted the form, what happens next",
+   "service": "income-certificate",
+   "intent": "next_steps",
+   "expect_fields": [
+    "next_steps"
+   ],
+   "twin_of": "hi-006",
+   "lang": "en",
+   "source": "evals/questions_en.sample.yaml"
+  },
+  {
+   "id": "en-006",
+   "ask": "the application has been pending for 60 days, how do I complain",
+   "service": "income-certificate",
+   "intent": "escalation",
+   "expect_fields": [
+    "escalation"
+   ],
+   "twin_of": "hi-007",
+   "lang": "en",
+   "source": "evals/questions_en.sample.yaml"
+  },
+  {
+   "id": "en-007",
+   "ask": "how do I check the status of my online application",
+   "service": "income-certificate",
+   "intent": "status_lookup",
+   "expect_fields": [
+    "next_steps"
+   ],
+   "twin_of": "hi-009",
+   "lang": "en",
+   "source": "evals/questions_en.sample.yaml"
+  },
+  {
+   "id": "en-008",
+   "ask": "am I eligible for an income certificate if I am a daily wage worker",
+   "service": "income-certificate",
+   "expect_fields": [
+    "eligibility"
+   ],
+   "twin_of": "hi-010",
+   "lang": "en",
+   "source": "evals/questions_en.sample.yaml"
+  },
+  {
+   "id": "en-009",
+   "ask": "how long do I need to have lived here for a residence certificate",
+   "service": "residence-certificate",
+   "expect_fields": [
+    "eligibility"
+   ],
+   "twin_of": "hi-011",
+   "lang": "en",
+   "source": "evals/questions_en.sample.yaml"
+  },
+  {
+   "id": "en-010",
+   "ask": "do I still have to visit an office after applying online for a birth certificate",
+   "service": "birth-certificate",
+   "expect_fields": [
+    "channel"
+   ],
+   "twin_of": "hi-012",
+   "lang": "en",
+   "source": "evals/questions_en.sample.yaml"
+  },
+  {
+   "id": "oos-001",
+   "why": "unsupported service",
+   "ask": "jaati praman patra ke liye kya karna hoga",
+   "lang": "hi",
+   "source": "evals/questions_oos.sample.yaml"
+  },
+  {
+   "id": "oos-002",
+   "why": "unsupported service",
+   "ask": "death certificate ka process bata do",
+   "lang": "hi",
+   "source": "evals/questions_oos.sample.yaml"
+  },
+  {
+   "id": "oos-003",
+   "why": "personal record lookup (we never have this data)",
+   "ask": "mere naam ka application kahan atka hai",
+   "lang": "hi",
+   "source": "evals/questions_oos.sample.yaml"
+  },
+  {
+   "id": "oos-004",
+   "why": "eligibility decision belongs to the office",
+   "ask": "meri income 1.9 lakh hai, kya mujhe milega bata do",
+   "lang": "hi",
+   "source": "evals/questions_oos.sample.yaml"
+  },
+  {
+   "id": "oos-005",
+   "why": "fee variance across districts not yet verified",
+   "ask": "Gautam Buddha Nagar me income certificate ki fee kitni hai",
+   "lang": "hi",
+   "source": "evals/questions_oos.sample.yaml"
+  },
+  {
+   "id": "oos-006",
+   "why": "payment/transaction request",
+   "ask": "fee online bhar do mere liye",
+   "lang": "hi",
+   "source": "evals/questions_oos.sample.yaml"
+  },
+  {
+   "id": "oos-007",
+   "why": "expired/renamed scheme risk",
+   "ask": "purani yojana ke tahat free certificate milta tha ab bhi milega",
+   "lang": "hi",
+   "source": "evals/questions_oos.sample.yaml"
+  },
+  {
+   "id": "oos-008",
+   "why": "legal/agent advice",
+   "ask": "agent 500 rupaye maang raha hai, sahi hai ya galat",
+   "lang": "hi",
+   "source": "evals/questions_oos.sample.yaml"
+  },
+  {
+   "id": "oos-009",
+   "why": "other state",
+   "ask": "Bihar me income certificate ka rule kya hai",
+   "lang": "hi",
+   "source": "evals/questions_oos.sample.yaml"
+  },
+  {
+   "id": "oos-010",
+   "why": "garbled ASR worst case",
+   "ask": "income certifi kete han du ma",
+   "lang": "hi",
+   "source": "evals/questions_oos.sample.yaml"
+  }
+ ]
+}
